@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+      <div class="jogo">
+        <div id="grid"></div>
+      </div>
+ 
+      <div class="lateral">
+        <span>1- RAM</span>
+        <span>2- MEMORIA DE MASSA</span>
+        <span>3- I7</span>
+        <span>4- ANDRESS BUS</span>
+        <span>5- DMA</span>
+        <span>6- EPROM</span>
+        <span>7- DUALCORE</span>
+        <span>8- CPU</span>
+        <span>9- ULA</span>
+        <span>10- REGISTRADORES</span>
+        <span>11- CS</span>
+        <span>12- DATA BUS</span>
+        <span>13- I5</span>
+        <span>14- QUADCORE</span>
+        <span>15- ROM</span>
+        <span>16- FLASH</span>
+
+        <div id="triste" style="display: none;"><img src="./img/triste.gif"></div>
+        <div id="feliz" style="display: none;"><img src="./img/feliz.gif" ></div>
+        <div id="concluido" style="display: none;"><img src="./img/final.gif"></div>
+        <div id="bravo" style="display: none;"><img src="./img/bravo.gif"></div>
+
+      </div>
+    </div>
+    </div>
+  </body>
+</html>
+<script>
+
+  var blocosN = [15, 16, 17,
+                35, 53, 71, 89, 107, 125, 143, 161, 179, 197, 215, 233, 251,
+                178, 180,
+                214, 213, 212, 211, 210, 209, 208, 207, 206,
+                224, 242, 260, 278, 296, 188, 170, 152, 134, 116, 98, 80,
+                279, 280, 281, 282,
+                237, 238, 239, 240, 241, 243, 244,
+                222, 258,
+                220, 202,
+                168, 169, 171, 172, 173, 174,
+                156,
+                97, 96, 95, 94, 93, 92, 91,
+                78, 114,
+                57, 75, 111, 129,
+                108,
+                135
+              ];
+
+  var i = 0;
+
+  for (var i = 1; i <= 306; i++) {
+    if (blocosN.includes(i)) {
+      grid.innerHTML += `<input type="text" id="a${i}" class="bloco" onblur="blurFunction()" onchange="verificar${i}()" maxlength="1" placeholder="${i}">`;
+
+
+      } else {
+      grid.innerHTML += `<input type="text" id="${i}" class="bloco1" disabled="">`;
+    }
+  }
+
+// função para os blocos
+
+   function verificar15() {
+    var letra = a15.value;
+    // para a letra 'R'
+    if (letra.toUpperCase() == "R") {
+      acerto();
+      document.getElementById("a15").style.background = "#C2BBF2";
+    }
+    else {
+      erro();
+      document.getElementById("a15").style.background = "#F05A6A";
+    }
+
+    focusFunction()
+  }
+
+  function verificar16() { 
+    var letra = a16.value;
+    // para a letra 'A'
+
+    if (letra.toUpperCase() == "A") {
+      acerto();
+      document.getElementById(`a16`).style.background = "#C2BBF2";
+
+    } else {
+      erro();
+      document.getElementById(`a16`).style.background = "#F05A6A";
+    }
+  }
+
+  function verificar17() { 
+    letra = a17.value;
+    // para a letra 'M'
+
+    if (letra.toUpperCase() == "M") {
+      acerto();
+      document.getElementById(`a17`).style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById(`a17`).style.background = "#F05A6A";
+    } 
+  }
+
+function verificar35() {
+     letra = a35.value;
+     // para a letra 'E'
+
+    if (letra.toUpperCase() == "E") {
+      acerto();
+      document.getElementById("a35").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a35").style.background = "#F05A6A";
+    }
+ }
+
+  function verificar53() {
+     letra = a53.value;
+     // para a letra 'M'
+
+    if (letra.toUpperCase() == "M") {
+      acerto();
+      document.getElementById("a53").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a53").style.background = "#F05A6A";
+    } 
+ }
+
+ function verificar71() {
+     letra = a71.value;
+     // para a letra 'O'
+
+    if (letra.toUpperCase() == "O") {
+      acerto();
+      document.getElementById("a71").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a71").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar89() {
+     letra = a89.value;
+     // para a letra 'R'
+    if (letra.toUpperCase() == "R") {
+      acerto();
+      document.getElementById("a89").style.background = "#C2BBF2";
+
+    } else {
+      erro();
+      document.getElementById("a89").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar107() {
+     letra = a107.value;
+     // para a letra 'I'
+
+    if (letra.toUpperCase() == "I") {
+      acerto();
+      document.getElementById("a107").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a107").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar125() {
+     letra = a125.value;
+     // para a letra 'A'
+
+    if (letra.toUpperCase() == "A") {
+      acerto();
+      document.getElementById("a125").style.background = "#C2BBF2";
+
+    } else {
+      erro();
+      document.getElementById("a125").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar143() {
+     letra = a143.value;
+     // para a letra 'D'
+
+    if (letra.toUpperCase() == "D") {
+      acerto();
+      document.getElementById("a143").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a143").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar161() {
+     letra = a161.value;
+     // para a letra 'E'
+
+    if (letra.toUpperCase() == "E") {
+      acerto();
+      document.getElementById("a161").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a161").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar179() {
+     letra = a179.value;
+     // para a letra 'M'
+
+    if (letra.toUpperCase() == "M") {
+      acerto();
+      document.getElementById("a179").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a179").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar197() {
+     letra = a197.value;
+     // para a letra 'A'
+
+    if (letra.toUpperCase() == "A") {
+      acerto();
+      document.getElementById("a197").style.background = "#C2BBF2";
+
+    } else {
+      erro();
+      document.getElementById("a197").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar215() {
+     letra = a215.value;
+     // para a letra 'S'
+
+    if (letra.toUpperCase() == "S") {
+      acerto();
+      document.getElementById("a215").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a215").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar233() {
+     letra = a233.value;
+     // para a letra 'S'
+
+    if (letra.toUpperCase() == "S") {
+      acerto();
+      document.getElementById("a233").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a233").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar251() {
+     letra = a251.value;
+     // para a letra 'A'
+
+    if (letra.toUpperCase() == "A") {
+      acerto();
+      document.getElementById("a251").style.background = "#C2BBF2";
+
+    } else {
+      erro();
+      document.getElementById("a251").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar178() {
+     letra = a178.value;
+     // para a letra 'D'
+
+    if (letra.toUpperCase() == "D") {
+      acerto();
+      document.getElementById("a178").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a178").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar180() {
+     letra = a180.value;
+     // para a letra 'A'
+
+    if (letra.toUpperCase() == "A") {
+      acerto();
+      document.getElementById("a180").style.background = "#C2BBF2";
+
+    } else {
+      erro();
+      document.getElementById("a180").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar214() {
+     letra = a214.value;
+     // para a letra 'U'
+
+    if (letra.toUpperCase() == "U") {
+      acerto();
+      document.getElementById("a214").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a214").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar213() {
+     letra = a213.value;
+     // para a letra 'B'
+
+    if (letra.toUpperCase() == "B") {
+      acerto();
+      document.getElementById("a213").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a213").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar212() {
+     letra = a212.value;
+     // para a letra 'S'
+
+    if (letra.toUpperCase() == "S") {
+      acerto();
+      document.getElementById("a212").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a212").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar211() {
+     letra = a211.value;
+     // para a letra 'S'
+
+    if (letra.toUpperCase() == "S") {
+      acerto();
+      document.getElementById("a211").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a211").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar210() {
+     letra = a210.value;
+     // para a letra 'E'
+
+    if (letra.toUpperCase() == "E") {
+      acerto();
+      document.getElementById("a210").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a210").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar209() {
+     letra = a209.value;
+     // para a letra 'R'
+    if (letra.toUpperCase() == "R") {
+      acerto();
+      document.getElementById("a209").style.background = "#C2BBF2";
+
+    } else {
+      erro();
+      document.getElementById("a209").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar208() {
+     letra = a208.value;
+     // para a letra 'D'
+
+    if (letra.toUpperCase() == "D") {
+      acerto();
+      document.getElementById("a208").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a208").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar207() {
+     letra = a207.value;
+     // para a letra 'N'
+
+    if (letra.toUpperCase() == "N") {
+      acerto();
+      document.getElementById("a207").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a207").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar206() {
+     letra = a206.value;
+     // para a letra 'A'
+
+    if (letra.toUpperCase() == "A") {
+      acerto();
+      document.getElementById("a206").style.background = "#C2BBF2";
+
+    } else {
+      erro();
+      document.getElementById("a206").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar224() {
+     letra = a224.value;
+     // para a letra 'D'
+
+    if (letra.toUpperCase() == "D") {
+      acerto();
+      document.getElementById("a224").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a224").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar242() {
+     letra = a242.value;
+     // para a letra 'O'
+
+    if (letra.toUpperCase() == "O") {
+      acerto();
+      document.getElementById("a242").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a242").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar260() {
+     letra = a260.value;
+     // para a letra 'R'
+    if (letra.toUpperCase() == "R") {
+      acerto();
+      document.getElementById("a260").style.background = "#C2BBF2";
+
+    } else {
+      erro();
+      document.getElementById("a260").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar278() {
+     letra = a278.value;
+     // para a letra 'E'
+
+    if (letra.toUpperCase() == "E") {
+       document.getElementById("a278").style.background = "#C2BBF2";
+      acerto();
+    } else {
+       erro();
+       document.getElementById("a278").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar188() {
+     letra = a188.value;
+     // para a letra 'R'
+    if (letra.toUpperCase() == "R") {
+      acerto();
+      document.getElementById("a188").style.background = "#C2BBF2";
+
+    } else {
+      erro();
+      document.getElementById("a188").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar170() {
+     letra = a170.value;
+      // para a letra 'T'
+
+    if (letra.toUpperCase() == "T") {
+      acerto();
+      document.getElementById("a170").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a170").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar152() {
+     letra = a152.value;
+     // para a letra 'S'
+
+    if (letra.toUpperCase() == "S") {
+      acerto();
+      document.getElementById("a152").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a152").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar134() {
+     letra = a134.value;
+     // para a letra 'I'
+
+    if (letra.toUpperCase() == "I") {
+      acerto();
+      document.getElementById("a134").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a134").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar116() {
+     letra = a116.value;
+     // para a letra 'G'
+
+    if (letra.toUpperCase() == "G") {
+      acerto();
+      document.getElementById("a116").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a116").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar98() {
+     letra = a98.value;
+     // para a letra 'E'
+
+    if (letra.toUpperCase() == "E") {
+      acerto();
+      document.getElementById("a98").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a98").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar80() {
+     letra = a80.value;
+     // para a letra 'R'
+    if (letra.toUpperCase() == "R") {
+      acerto();
+      document.getElementById("a80").style.background = "#C2BBF2";
+
+    } else {
+      erro();
+      document.getElementById("a80").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar279() {
+     letra = a279.value;
+     // para a letra 'P'
+
+    if (letra.toUpperCase() == "P") {
+      acerto();
+      document.getElementById("a279").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a279").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar280() {
+     letra = a280.value;
+     // para a letra 'R'
+    if (letra.toUpperCase() == "R") {
+      acerto();
+      document.getElementById("a280").style.background = "#C2BBF2";
+
+    } else {
+      erro();
+      document.getElementById("a280").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar281() {
+     letra = a281.value;
+     // para a letra 'O'
+
+    if (letra.toUpperCase() == "O") {
+      acerto();
+      document.getElementById("a281").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a281").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar282() {
+     letra = a282.value;
+     // para a letra 'M'
+
+    if (letra.toUpperCase() == "M") {
+      acerto();
+      document.getElementById("a282").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a282").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar237() {
+     letra = a237.value;
+     // para a letra 'D'
+
+    if (letra.toUpperCase() == "D") {
+      acerto();
+      document.getElementById("a237").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a237").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar238() {
+     letra = a238.value;
+     // para a letra 'U'
+
+    if (letra.toUpperCase() == "U") {
+      acerto();
+      document.getElementById("a238").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a238").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar239() {
+     letra = a239.value;
+     // para a letra 'A'
+
+    if (letra.toUpperCase() == "A") {
+      acerto();
+      document.getElementById("a239").style.background = "#C2BBF2";
+
+    } else {
+      erro();
+      document.getElementById("a239").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar240() {
+     letra = a240.value;
+     // para a letra 'L'
+
+    if (letra.toUpperCase() == "L") {
+      acerto();
+      document.getElementById("a240").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a240").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar241() {
+     letra = a241.value;
+     // para a letra 'C'
+
+    if (letra.toUpperCase() == "C") {
+      acerto();
+      document.getElementById("a241").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a241").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar243() {
+     letra = a243.value;
+     // para a letra 'R'
+    if (letra.toUpperCase() == "R") {
+      acerto();
+      document.getElementById("a243").style.background = "#C2BBF2";
+
+    } else {
+      erro();
+      document.getElementById("a243").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar244() {
+     letra = a244.value;
+     // para a letra 'E'
+
+    if (letra.toUpperCase() == "E") {
+      acerto();
+      document.getElementById("a244").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a244").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar222() {
+     letra = a222.value;
+     // para a letra 'U'
+
+    if (letra.toUpperCase() == "U") {
+      acerto();
+      document.getElementById("a222").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a222").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar258() {
+     letra = a258.value;
+     // para a letra 'A'
+
+    if (letra.toUpperCase() == "A") {
+      acerto();
+      document.getElementById("a258").style.background = "#C2BBF2";
+
+    } else {
+      erro();
+      document.getElementById("a258").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar220() {
+     letra = a220.value;
+     // para a letra 'P'
+
+    if (letra.toUpperCase() == "P") {
+      acerto();
+      document.getElementById("a220").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a220").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar202() {
+     letra = a202.value;
+     // para a letra 'C'
+
+    if (letra.toUpperCase() == "C") {
+      acerto();
+      document.getElementById("a202").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a202").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar168() {
+     letra = a168.value;
+     // para a letra 'D'
+
+    if (letra.toUpperCase() == "D") {
+      acerto();
+      document.getElementById("a168").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a168").style.background = "#F05A6A";
+    }
+ }
+ 
+ function verificar169() {
+     letra = a169.value;
+     // para a letra 'A'
+
+    if (letra.toUpperCase() == "A") {
+      acerto();
+      document.getElementById("a169").style.background = "#C2BBF2";
+
+    } else {
+      erro();
+      document.getElementById("a169").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar171() {
+     letra = a171.value;
+     // para a letra 'A'
+
+    if (letra.toUpperCase() == "A") {
+      acerto();
+      document.getElementById("a171").style.background = "#C2BBF2";
+
+    } else {
+      erro();
+      document.getElementById("a171").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar172() {
+     letra = a172.value;
+     // para a letra 'B'
+
+    if (letra.toUpperCase() == "B") {
+      acerto();
+      document.getElementById("a172").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a172").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar173() {
+     letra = a173.value;
+     // para a letra 'U'
+
+    if (letra.toUpperCase() == "U") {
+      acerto();
+      document.getElementById("a173").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a173").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar174() {
+     letra = a174.value;
+     // para a letra 'S'
+
+    if (letra.toUpperCase() == "S") {
+      acerto();
+      document.getElementById("a174").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a174").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar156() {
+     letra = a156.value;
+     // para a letra 'C'
+
+    if (letra.toUpperCase() == "C") {
+      acerto();
+      document.getElementById("a156").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a156").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar91() {
+     letra = a91.value;
+     // para a letra 'Q'
+
+    if (letra.toUpperCase() == "Q") {
+      acerto();
+      document.getElementById("a91").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a91").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar92() {
+     letra = a92.value;
+     // para a letra 'U'
+
+    if (letra.toUpperCase() == "U") {
+      acerto();
+      document.getElementById("a92").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a92").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar93() {
+     letra = a93.value;
+     // para a letra 'A'
+
+    if (letra.toUpperCase() == "A") {
+      acerto();
+      document.getElementById("a93").style.background = "#C2BBF2";
+
+    } else {
+      erro();
+      document.getElementById("a93").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar94() {
+     letra = a94.value;
+     // para a letra 'D'
+
+    if (letra.toUpperCase() == "D") {
+      acerto();
+      document.getElementById("a94").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a94").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar95() { 
+     letra = a95.value;
+     // para a letra 'C'
+
+    if (letra.toUpperCase() == "C") {
+      acerto();
+      document.getElementById("a95").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a95").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar96() {
+     letra = a96.value;
+     // para a letra 'O'
+
+    if (letra.toUpperCase() == "O") {
+      acerto();
+      document.getElementById("a96").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a96").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar97() {
+     letra = a97.value;
+     // para a letra 'R'
+    if (letra.toUpperCase() == "R") {
+      acerto();
+      document.getElementById("a97").style.background = "#C2BBF2";
+
+    } else {
+      erro();
+      document.getElementById("a97").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar78() {
+     letra = a78.value;
+     // para a letra 'R'
+    if (letra.toUpperCase() == "R") {
+      acerto();
+      document.getElementById("a78").style.background = "#C2BBF2";
+
+    } else {
+      erro();
+      document.getElementById("a78").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar114() {
+     letra = a114.value;
+     // para a letra 'M'
+
+    if (letra.toUpperCase() == "M") {
+      acerto();
+      document.getElementById("a114").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a114").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar57() {
+     letra = a57.value;
+     if (letra.toUpperCase() == "F") {
+      acerto();
+      document.getElementById("a57").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a57").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar75() {
+     letra = a75.value;
+     // para a letra 'L'
+
+    if (letra.toUpperCase() == "L") {
+      acerto();
+      document.getElementById("a75").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a75").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar111() {
+     letra = a111.value;
+    // para a letra 'S'
+
+    if (letra.toUpperCase() == "S") {
+      acerto();
+      document.getElementById("a111").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a111").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar129() {
+     letra = a129.value;
+     // para a letra 'H'
+
+    if (letra.toUpperCase() == "H") {
+      acerto();
+      document.getElementById("a129").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a129").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar108() {
+     letra = a108.value;
+     // para a letra '7'
+
+    if (letra.toUpperCase() == "7") {
+      acerto();
+      document.getElementById("a108").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a108").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar135() {
+     letra = a135.value;
+     // para a letra '5'
+
+    if (letra.toUpperCase() == "5") {
+      acerto();
+      document.getElementById("a135").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a135").style.background = "#F05A6A";
+    }
+ }
+
+ function verificar296() {
+     letra = a296.value;
+     // para a letra 's'
+
+    if (letra.toUpperCase() == "S") {
+      acerto();
+      document.getElementById("a296").style.background = "#C2BBF2";
+
+    } else {
+       erro();
+       document.getElementById("a296").style.background = "#F05A6A";
+    }
+ }
+
+// funcão para verificar as letras
+
+  function acerto() {
+    feliz.style.display = "block"
+    triste.style.display = "none"
+  }
+
+  function erro() {
+    feliz.style.display = "none"
+    triste.style.display = "block"
+  }
+
+</script>

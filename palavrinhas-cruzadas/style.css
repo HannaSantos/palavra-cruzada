@@ -1,0 +1,65 @@
+body {
+    margin: auto;
+    padding: 0;
+}
+
+img{
+    margin: 5px 0;
+    width: 250px;
+}
+
+.container{
+    width: 90%;
+    margin: auto;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.jogo{
+    margin: 20px 0;
+    padding: auto;
+    width: 700px;
+    border-style: solid;
+    border-color: #FFCCD6;
+    border-radius: 5px;
+}
+
+.bloco {
+    width: 30px;
+    height: 30px;
+    color: black;
+    background-color: #FFCCD6;
+    border-color: white;
+}
+
+.bloco:focus-within {
+    background-color: #F9F5D1;
+  }
+
+.bloco1 {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-color: white;
+    border-style: solid;
+    opacity: 1;
+}
+
+.lateral{
+    margin: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background-color: lightcyan;
+    border-radius: 5px;
+    width: 250px;
+    height: 620px; 
+}
+
+span {
+    margin: 3px;
+}
+
